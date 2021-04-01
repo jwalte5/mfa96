@@ -92,6 +92,9 @@ consumption_from_xml = function(imp_xml,
 
   colnames(consumption) = c("ID","Block", "Line", "Analyst", "Group", "Well.ID", "Row", "Col", "Solution", "Cons")
 
+  consumption$ID = str_trim(consumption$ID, side = "both")
+  consumption$Analyst = str_trim(consumption$Analyst, side = "both")
+
   return(consumption)
 }
 
