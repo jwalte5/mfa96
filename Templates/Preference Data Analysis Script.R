@@ -93,7 +93,7 @@ con_df$Solution = factor(con_df$Solution, levels = c("Sucrose", "Cocaine"))
 ## GENERATE RAW DATA SUMMARY STATISTICS AND A RAW DATA PLOT------------
 
 # Save the dataframe as a csv
-write.csv(con_df, file = file.path(data_dir, "raw_data.csv"))
+write.csv(con_df, file = file.path(data_dir, "raw_con_data.csv"))
 
 # Generate a raw data plot and save to the output directory
 jpeg(filename = paste0(output_dir, "raw_data_plot.jpg"))
@@ -159,6 +159,9 @@ drop_df %>%
 attr_rate = nrow(drop_df)/(nrow(drop_df) + nrow(con_df))
 
 cat(c("\n\nAttrition Rate", attr_rate), file = paste0(output_dir, "stats.csv"), sep = ",", append = TRUE)
+
+# Save the dataframe as a csv
+write.csv(con_df, file = file.path(data_dir, "adjusted_con_data.csv"))
 
 
 ## GENERATE EVAPORATION-ADJUSTED DATA PLOTS----------------------------

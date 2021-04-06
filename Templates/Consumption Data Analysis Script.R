@@ -148,6 +148,9 @@ attr_rate = nrow(drop_df)/(nrow(drop_df) + nrow(con_df))
 
 cat(c("\n\nAttrition Rate", attr_rate), file = paste0(output_dir, "stats.csv"), sep = ",", append = TRUE)
 
+# Save the dataframe as a csv
+write.csv(con_df, file = file.path(data_dir, "adjusted_data.csv"))
+
 
 ## GENERATE EVAPORATION-ADJUSTED DATA PLOTS----------------------------
 
